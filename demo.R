@@ -9,11 +9,11 @@ data("hyperLOPIT2015ms3r1psm")
 load("data/foicol.rda")
 sapply(foicol@foic, function(z) z@description)
 
-base_dir <- "~/ResearchProjects"
+base_dir <- "./data/"
 
 ## data for compare app (Claire's data, not to be shared as unpublished)
-load(file.path(base_dir, "2017-THP1-LOPIT-Claire/data4/lps.rda"))
-load(file.path(base_dir, "2017-THP1-LOPIT-Claire/data4/unst.rda"))
+load(file.path(base_dir, "lps.rda"))
+load(file.path(base_dir, "unst.rda"))
 xx <- MSnSetList(list(unst, lps))
 
 ## ==================================================================
