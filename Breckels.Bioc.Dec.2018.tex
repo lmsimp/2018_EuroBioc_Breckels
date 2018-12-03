@@ -87,7 +87,7 @@
 \title{Interactive visualisation of spatial proteomics data}
 \author{L. Breckels and L. Gatto}
 \institute{
-University of Cambridge, UK | Institut de Duve, Belgium\\
+University of Cambridge, UK | de Duve Institute, Belgium\\
 lms79@cam.ac.uk | laurent.gatto@uclouvain.be}
 \date{\small EuroBioC 2018, 6-7th December 2018}
 
@@ -105,13 +105,13 @@ lms79@cam.ac.uk | laurent.gatto@uclouvain.be}
 \begin{frame}{Cell organisation}
   \begin{columns}[t]
     \begin{column}[T]{0.5\textwidth}
-      \includegraphics[width=1\linewidth]{Figures/cell.pdf} 
+      \includegraphics[width=1\linewidth]{Figures/cell.pdf}
     \end{column}
-    \begin{column}[T]{0.5\textwidth} 
+    \begin{column}[T]{0.5\textwidth}
        \begin{itemize}
-   	 \item \scriptsize Proteins are spatially organised according to function
-    	\item Significant correlation between disease classes and sub-cellular localisations
-	\item Abnormal protein localisation leading to the loss of functional effects in diseases
+         \item \scriptsize Proteins are spatially organised according to function
+        \item Significant correlation between disease classes and sub-cellular localisations
+        \item Abnormal protein localisation leading to the loss of functional effects in diseases
        \end{itemize}
            \end{column}
   \end{columns}
@@ -122,39 +122,39 @@ lms79@cam.ac.uk | laurent.gatto@uclouvain.be}
 
 
 %----------------------------------------------------------------------------------------
-%	SLIDE 2 ---- Localisation Maps 
+%	SLIDE 2 ---- Localisation Maps
 %----------------------------------------------------------------------------------------
 
 \section{Global localisation maps}
 
 \begin{frame}{Localisation maps from quantitative proteomics}
 \bigskip
-      \includegraphics[width=1\linewidth]{Figures/lopit-new.pdf} 
-       \begin{center} 
+      \includegraphics[width=1\linewidth]{Figures/lopit-new.pdf}
+       \begin{center}
        \footnotesize{Goal: to pinpoint the sub-cellular localisation of proteins}
        \end{center}
 
 \end{frame}
 
-  
-        
+
+
 
 %----------------------------------------------------------------------------------------
-%	SLIDE 3 ---- A complete suite of software 
+%	SLIDE 3 ---- A complete suite of software
 %----------------------------------------------------------------------------------------
 
 \begin{frame}{A synergistic framework}
   \begin{block} \large \textcolor{Blue}{Data analysis and machine learning}
   \begin{itemize}
-  \item MSnbase and pRoloc - dedicated packages providing robust 
+  \item MSnbase and pRoloc - dedicated packages providing robust
   and reproducible tools
-   \end{itemize}    
+   \end{itemize}
   \end{block}
 
-  \begin{block} \large \textcolor{Blue}{Data visualisation} 
+  \begin{block} \large \textcolor{Blue}{Data visualisation}
     \begin{itemize}
     \item pRolocGUI - interactive visualisation and data mining
-    \item User driven: essential to transfer of findings easily between 
+    \item User driven: essential to transfer of findings easily between
     programmatic and graphical interfaces
     \end{itemize}
   \end{block}
@@ -167,121 +167,85 @@ lms79@cam.ac.uk | laurent.gatto@uclouvain.be}
 \begin{frame}{The pRolocGUI package}
  \begin{small}
 \begin{enumerate}
-\item The \textit{main app} - for exploratory data analysis and features a 
-searchable, clickable and zoomable PCA plot 
-\item The \textit{comparison app} - for examining two replicate experiments, 
+\item The \textit{main app} - for exploratory data analysis and features a
+searchable, clickable and zoomable PCA plot
+\item The \textit{comparison app} - for examining two replicate experiments,
 or two experiments from different conditions etc
-\item The \textit{aggregation app} - allows one to compare the effects of 
+\item The \textit{aggregation app} - allows one to compare the effects of
 feature aggregation, for example, when combining peptides to proteins
-\item The \textit{classify app} - useful for viewing the sub-cellular class 
+\item The \textit{classify app} - useful for viewing the sub-cellular class
 predictions output from a supervised machine learning analysis
 \end{enumerate}
 \end{small}
 \end{frame}
 
 
-%----------------------------------------------------------------------------------------
-%	SLIDE 5 ---- The main application
-%----------------------------------------------------------------------------------------
+%% %----------------------------------------------------------------------------------------
+%% %	SLIDE 5 ---- The main application
+%% %----------------------------------------------------------------------------------------
 
-\begin{frame}{The main application}
-\smallskip
-  \begin{small} \textbf{Use case:} hyperLOPIT on mouse embryonic stem cells
-  \end{small}
-  \begin{figure}
-    \includegraphics[width=1\linewidth]{Figures/main-app.png}
-  \end{figure}
-\end{frame}
+%% \begin{frame}{The main application}
+%% \smallskip
+%%   \begin{small} \textbf{Use case:} hyperLOPIT on mouse embryonic stem cells
+%%   \end{small}
+%%   \begin{figure}
+%%     \includegraphics[width=1\linewidth]{Figures/main-app.png}
+%%   \end{figure}
+%% \end{frame}
+
+
+%% %----------------------------------------------------------------------------------------
+%% %	SLIDE 6 ---- The aggregation application
+%% %----------------------------------------------------------------------------------------
+
+%% \begin{frame}{The aggregation application}
+%% \smallskip
+%%   \begin{small} \textbf{Use case:} Protein and peptide localisation
+%%   \end{small}
+%%   \begin{figure}
+%%     \includegraphics[width=1\linewidth]{Figures/agg-app.png}
+%%   \end{figure}
+%% \end{frame}
+
+%% %----------------------------------------------------------------------------------------
+%% %	SLIDE 7 ---- The classify application
+%% %----------------------------------------------------------------------------------------
+
+%% \begin{frame}{The classify application}
+%% \smallskip
+%%   \begin{small} \textbf{Use case:} Setting thresholds for protein location by SVM
+%%   \end{small}
+%%   \begin{figure}
+%%     \includegraphics[width=1\linewidth]{Figures/classify-app.png}
+%%   \end{figure}
+%% \end{frame}
+
+%% %----------------------------------------------------------------------------------------
+%% %	SLIDE 8 ---- The comparison application
+%% %----------------------------------------------------------------------------------------
+
+%% \begin{frame}{The comparison application}
+%% \smallskip
+%%   \begin{small} \textbf{Use case:} hyperLOPIT on THP1 monocytic cancer cells after 12 hours LPS stimualtion
+%%   \end{small}
+%%   \begin{figure}
+%%     \includegraphics[width=1\linewidth]{Figures/compare-app.png}
+%%   \end{figure}
+%% \end{frame}
 
 
 %----------------------------------------------------------------------------------------
-%	SLIDE 6 ---- The aggregation application
-%----------------------------------------------------------------------------------------
-
-\begin{frame}{The aggregation application}
-\smallskip
-  \begin{small} \textbf{Use case:} Protein and peptide localisation
-  \end{small}
-  \begin{figure}
-    \includegraphics[width=1\linewidth]{Figures/agg-app.png}
-  \end{figure}
-\end{frame}
-
-%----------------------------------------------------------------------------------------
-%	SLIDE 7 ---- The classify application
-%----------------------------------------------------------------------------------------
-
-\begin{frame}{The classify application}
-\smallskip
-  \begin{small} \textbf{Use case:} Setting thresholds for protein location by SVM
-  \end{small}
-  \begin{figure}
-    \includegraphics[width=1\linewidth]{Figures/classify-app.png}
-  \end{figure}
-\end{frame}
-
-%----------------------------------------------------------------------------------------
-%	SLIDE 8 ---- The comparison application
-%----------------------------------------------------------------------------------------
-
-\begin{frame}{The comparison application}
-\smallskip
-  \begin{small} \textbf{Use case:} hyperLOPIT on THP1 monocytic cancer cells after 12 hours LPS stimualtion
-  \end{small}
-  \begin{figure}
-    \includegraphics[width=1\linewidth]{Figures/compare-app.png}
-  \end{figure}
-\end{frame}
-
-%----------------------------------------------------------------------------------------
-%	Acknowledgements
-%----------------------------------------------------------------------------------------
-  \begin{frame}
-
-   \begin{block}{Software}
-     \vspace{.1cm}
-     Infrastructure: \Rpackage{MSnbase} \newline
-     ML: \Rpackage{pRoloc} \newline
-     Visualisation: \Rpackage{pRolocGUI} \newline
-     Data: \Rpackage{pRolocdata}.
-    \vspace{.2cm}
-  \end{block}
-   
-%  \begin{block}{Pre-print}
-%  \begin{small}
-%    \textit{Learning from heterogeneous data sources: an application
-%      in spatial proteomics.} Breckels LM, Holden S, Wonjar D, Mulvey
-%    CM, Christoforou A, Groen AJ, Kohlbacher O, Lilley KS and Gatto L.
-%    bioR$\chi$iv~pre-print~\url{http://dx.doi.org/10.1101/022152}
-%    \vspace{.2cm}
-%    \end{small}
-%  \end{block}
-  
-  \begin{block}{Acknowledgements}
-    \begin{itemize}
-    \item Prof. Kathryn Lilley (Cambridge Centre for Proteomics)
-    \item Funding: BBSRC
-    \end{itemize}
-  \end{block}
-  
-%  \footnotesize{Slides available under CC-BY license:
-%    \url{http://dx.doi.org/10.6084/m9.figshare.1619712}.}
-  
-  \end{frame}
-  
-  
- %----------------------------------------------------------------------------------------
 %	SLIDE 8 ---- EXTRA SLIDES
 %----------------------------------------------------------------------------------------
 
 \begin{frame}{Main app - Example 1: TRAPP complex}
 \smallskip
 \footnotesize {
-  \begin{itemize} 
+  \begin{itemize}
   \item TRAPP complex (trafficking protein particle complex)
   \item Multi-localised: involved in trafficking between ER/GA and PM
-  \item Note: one protein sits away, investigation shows it has a separate  role 
-  as an activator of NF-kappa-B through increased phosphorlyation 
+  \item Note: one protein sits away, investigation shows it has a separate  role
+  as an activator of NF-kappa-B through increased phosphorlyation
   \end{itemize}
   }
   \begin{figure}
@@ -294,7 +258,7 @@ predictions output from a supervised machine learning analysis
 \begin{frame}{Main app - Example 2: EIF3 complex}
 \smallskip
 \footnotesize {
-  \begin{itemize} 
+  \begin{itemize}
   \item Eukaryotic initiation factor 3 (eIF3) is a multiprotein complex that functions during the initiation phase of translation
   \item eIF3 stimulates nearly all steps of translation initiation
   \item location and profiles highly correlated -> well characterised complex
@@ -305,15 +269,15 @@ predictions output from a supervised machine learning analysis
     \includegraphics[width=.5\linewidth]{Figures/demo2-eif3-profiles.png}
   \end{figure}
 \end{frame}
-  
+
 
 
 \begin{frame}{Main app - Example 3: Visualisation of many complexes}
 \smallskip
 \footnotesize {
-  \begin{itemize} 
+  \begin{itemize}
   \item The application is well suited to visualisation of multiple organelles/complexes/sub-cellular niches
-  \item The handy drop down menu allows one to easily click on/off compartments - avoid 
+  \item The handy drop down menu allows one to easily click on/off compartments - avoid
   the regeneration of multiple plots etc.
   \end{itemize}
   }
@@ -326,7 +290,7 @@ predictions output from a supervised machine learning analysis
 \begin{frame}{Aggregation app - Example 4: Protein FAM210A}
 \smallskip
 \footnotesize {
-  \begin{itemize} 
+  \begin{itemize}
   \item This is an interesting protein found from looking at the outliers of the aggvar plot on the LHS
   \item 3 PSMs available for quantitation all with very different localisations on the plot
   \item Not much was known about this proteins function until this year (see http://www.pnas.org/content/115/16/E3759)
@@ -343,9 +307,9 @@ predictions output from a supervised machine learning analysis
 \begin{frame}{Classify app - Example 5: Visualisation of ML results}
 \smallskip
 \footnotesize {
-  \begin{itemize} 
+  \begin{itemize}
   \item Load the SVM classification results from the mouse stem cell dataset
-  \item Explain how users set thresholds 
+  \item Explain how users set thresholds
   \item See the effects on classifictaion of setting thresholds
     \end{itemize}
   }
@@ -358,8 +322,8 @@ predictions output from a supervised machine learning analysis
 \begin{frame}{Compare app - Example 6: Human THP data (a monocytic cancer cell line)}
 \smallskip
 \footnotesize {
-  \begin{itemize} 
-  \item hyperLOPIT experiment on a THP1 cells, 3 x 20 fractions (two 10 plex TMT each replicate) 
+  \begin{itemize}
+  \item hyperLOPIT experiment on a THP1 cells, 3 x 20 fractions (two 10 plex TMT each replicate)
   \item Unstimulated (LHS) and cells treated with Lipopolysaccharide (LPS) (12 hrs stimulation) (RHS)
   \item Many proteins re-localise after 12 hours LPS stimulations
   \item Example 1 - CDC42. In active state binds to a variety of effector proteins to regulate cellular responses at the plasma membrane (PM)
@@ -376,6 +340,31 @@ predictions output from a supervised machine learning analysis
 \end{frame}
 
 
+%----------------------------------------------------------------------------------------
+%	Acknowledgements
+%----------------------------------------------------------------------------------------
+  \begin{frame}
+
+   \begin{block}{Software}
+     \vspace{.1cm}
+     Infrastructure: \Rpackage{MSnbase} \newline
+     ML: \Rpackage{pRoloc} \newline
+     Visualisation: \Rpackage{pRolocGUI} \newline
+     Data: \Rpackage{pRolocdata}.
+    \vspace{.2cm}
+  \end{block}
+
+  \begin{block}{Acknowledgements}
+    \begin{itemize}
+    \item Prof. Kathryn Lilley (Cambridge Centre for Proteomics)
+    \item Funding: BBSRC
+    \end{itemize}
+  \end{block}
+
+%% \footnotesize{Slides available under CC-BY license:
+%%   \url{http://dx.doi.org/10.6084/m9.figshare.1619712}.}
+
+  \end{frame}
 
 
 
