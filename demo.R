@@ -9,9 +9,11 @@ data("hyperLOPIT2015ms3r1psm")
 load("data/foicol.rda")
 sapply(foicol@foic, function(z) z@description)
 
+base_dir <- "~/ResearchProjects"
+
 ## data for compare app (Claire's data, not to be shared as unpublished)
-load("../2017-THP1-LOPIT-Claire/data4/lps.rda")
-load("../2017-THP1-LOPIT-Claire/data4/unst.rda")
+load(file.path(base_dir, "2017-THP1-LOPIT-Claire/data4/lps.rda"))
+load(file.path(base_dir, "2017-THP1-LOPIT-Claire/data4/unst.rda"))
 xx <- MSnSetList(list(unst, lps))
 
 ## ==================================================================
@@ -24,7 +26,7 @@ xx <- MSnSetList(list(unst, lps))
 
 ## MULTI-LOCALISATION ---> ER/GA    to    PM / Cytosol
 ## ------------------------------------------------------------------
-## All protein involved in trafficking between ER/GA and PM/Cytoplasm. 
+## All protein involved in trafficking between ER/GA and PM/Cytoplasm.
 
 
 ## DEMO:
@@ -32,11 +34,11 @@ xx <- MSnSetList(list(unst, lps))
 ## 1.  Search for TRAPPC in the data table of the main application
 ##     7 proteins will be found all part of the TRAPP complex.
 ## 2.  Localised in "no mans land" as it is has multiple localisation
-## 3.  Note: one protein sits away, investigation shows it has a separate 
-##     role as an activator of NF-kappa-B through increased phosphorlyation 
+## 3.  Note: one protein sits away, investigation shows it has a separate
+##     role as an activator of NF-kappa-B through increased phosphorlyation
 ##     of IKK complex.
 ## 4.  Zoom in on cluster
-## 5.  Go to profiles, keep only ER/GA, PM and Cytosol --> see it is 
+## 5.  Go to profiles, keep only ER/GA, PM and Cytosol --> see it is
 ##     a composite of these
 
 pRolocVis(hyperLOPIT2015, fcol = "final.assignment")
@@ -51,15 +53,15 @@ pRolocVis(hyperLOPIT2015, fcol = "final.assignment")
 
 ## LOCALISATION ---> Edge of the NUCLEUS
 ## ------------------------------------------------------------------
-## Eukaryotic initiation factor 3 (eIF3) is a multiprotein complex 
+## Eukaryotic initiation factor 3 (eIF3) is a multiprotein complex
 ## that functions during the initiation phase of translation
-## 
+##
 ## --- eIF3 stimulates nearly all steps of translation initiation
 
 ## DEMO:
 ## ------------------------------------------------------------------
 ## 1.   Search fro EIF3
-## 2.   Look at location and profiles are very high correlated, a good 
+## 2.   Look at location and profiles are very high correlated, a good
 ##      examples of a well characterised complex
 
 pRolocVis(hyperLOPIT2015, fcol = "final.assignment")
@@ -88,21 +90,21 @@ pRolocVis(hyperLOPIT2015, fcol = "protein.complexes")
 ## THE AGGREGATION APP
 ## ==================================================================
 ## ==================================================================
-## Example 4 - Q8BGY7  -->   Protein FAM210A, family with sequence 
+## Example 4 - Q8BGY7  -->   Protein FAM210A, family with sequence
 ##                           similarity 210
 ## ==================================================================
 
-## LOCALISATION ---> Unknown thought to be expressed in MT and CYTOPLASM 
+## LOCALISATION ---> Unknown thought to be expressed in MT and CYTOPLASM
 ##                                    (we see peptides in both locations)
 ## ------------------------------------------------------------------
-## This is an interesting protein found from looking at the outliers 
+## This is an interesting protein found from looking at the outliers
 ## on the aggvar plot on the LHS. This protein has 3 PSMs available for
 ## quantitation all with very different localisations on the plot.
 
-## Not much was known about this proteins function until this year 
+## Not much was known about this proteins function until this year
 ## (see http://www.pnas.org/content/115/16/E3759)
 ## Is is expressed in muscle mitochondria and cytoplasm but not in bone
-## and thought to strongly influence the structure and strength of 
+## and thought to strongly influence the structure and strength of
 ## both muscle and bone and a new target for osteoporosis.
 
 
@@ -115,7 +117,7 @@ pRolocVis(hyperLOPIT2015, fcol = "protein.complexes")
 ##        - RHS: PSM/peptide level PCA plot
 
 
-## DEMO: 
+## DEMO:
 ## ------------------------------------------------------------------
 
 hl <- combineFeatures(hyperLOPIT2015ms3r1psm,
@@ -136,7 +138,7 @@ pRolocVis(hl, app = "aggregate", fcol = "markers",
 ## ==================================================================
 
 ## Load the classification results from the mouse stem cell dataset
-## Explain how users set thresholds 
+## Explain how users set thresholds
 ## See the effects on classifictaion of setting thresholds
 
 ## DEMO:
@@ -156,9 +158,9 @@ myThreshold <- pRolocVis(hyperLOPIT2015, app = "classify",
 ## Example 6 - Claire's THP data (a monocytic cancer cell line)
 ## ==================================================================
 
-## USE CASE: - hyperLOPIT experiment on a THP1 cells 
-##           - 3 x 20 fractions (two 10 plex TMT each replicate) 
-##                       (1) unstimulated and also 
+## USE CASE: - hyperLOPIT experiment on a THP1 cells
+##           - 3 x 20 fractions (two 10 plex TMT each replicate)
+##                       (1) unstimulated and also
 ##                       (2) cells treated with Lipopolysaccharide (LPS) (12 hrs stimulation)
 ##           - see many proteins re-localise after 12 hours LPS stimulations
 
@@ -171,7 +173,7 @@ myThreshold <- pRolocVis(hyperLOPIT2015, app = "classify",
 
 
 
-## DEMO:  CDC42. In active state binds to a variety of effector proteins 
+## DEMO:  CDC42. In active state binds to a variety of effector proteins
 ##              to regulate cellular responses at the plasma membrane (PM)
 ## ------------------------------------------------------------------
 ## 1.   Search for the small GTPase Cdc42
@@ -183,13 +185,13 @@ myThreshold <- pRolocVis(hyperLOPIT2015, app = "classify",
 
 
 
-## DEMO:  RABs. Another GTPase regulates membrane trafficking 
+## DEMO:  RABs. Another GTPase regulates membrane trafficking
 ##              to regulate cellular responses at the plasma membrane (PM)
 ## ------------------------------------------------------------------
 
-##       Rab GTPases regulate many steps of membrane trafficking, including 
-##       vesicle formation and movement. These processes make up the route through which 
-##       cell surface proteins are trafficked from the GA to the PM 
+##       Rab GTPases regulate many steps of membrane trafficking, including
+##       vesicle formation and movement. These processes make up the route through which
+##       cell surface proteins are trafficked from the GA to the PM
 ## ------------------------------------------------------------------
 ## 1.   Search for the RAB32 --->           GA to ER      (see SVM loc in table)
 ##      Then search for RAB12 --->          PM to GA
@@ -197,5 +199,3 @@ myThreshold <- pRolocVis(hyperLOPIT2015, app = "classify",
 ## (make sure columns of table display SVM location)
 
 pRolocVis(xx, app = "compare", remap = FALSE)
-
-
