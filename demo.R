@@ -6,6 +6,10 @@ suppressPackageStartupMessages(library("pRolocGUI"))
 ## data for main, aggregate and classify
 data("hyperLOPIT2015")
 data("hyperLOPIT2015ms3r1psm")
+## data for aggreation app
+hl <- combineFeatures(hyperLOPIT2015ms3r1psm,
+                      groupBy = fData(hyperLOPIT2015ms3r1psm)$Sequence,
+                      fun = median)
 load("data/foicol.rda")
 sapply(foicol@foic, function(z) z@description)
 
@@ -22,7 +26,6 @@ xx <- MSnSetList(list(unst, lps))
 ## ==================================================================
 ## Example 1 - TRAPP complex (trafficking protein particle complex)
 ## ==================================================================
-
 
 ## MULTI-LOCALISATION ---> ER/GA    to    PM / Cytosol
 ## ------------------------------------------------------------------
@@ -42,8 +45,6 @@ xx <- MSnSetList(list(unst, lps))
 ##     a composite of these
 
 pRolocVis(hyperLOPIT2015, fcol = "final.assignment")
-
-# trapp <- foicol[[13]]
 
 
 
@@ -67,8 +68,6 @@ pRolocVis(hyperLOPIT2015, fcol = "final.assignment")
 pRolocVis(hyperLOPIT2015, fcol = "final.assignment")
 
 
-
-
 ## ==================================================================
 ## Example 3 - Show that the main app can load many organelles/complexes
 ## ==================================================================
@@ -81,10 +80,6 @@ pRolocVis(hyperLOPIT2015, fcol = "final.assignment")
 ## DEMO:
 ## ------------------------------------------------------------------
 pRolocVis(hyperLOPIT2015, fcol = "protein.complexes")
-
-
-
-
 
 ## ==================================================================
 ## THE AGGREGATION APP
@@ -107,9 +102,8 @@ pRolocVis(hyperLOPIT2015, fcol = "protein.complexes")
 ## and thought to strongly influence the structure and strength of
 ## both muscle and bone and a new target for osteoporosis.
 
-
-## The 3 PSMs are located in very different places one in MT and other close to CYTOSOL
-## agree with known literature.
+## The 3 PSMs are located in very different places one in MT and other
+## close to CYTOSOL agree with known literature.
 
 ## Notes: - Red points shows aggregated protein localisation from PSMs
 ##        - LHS: The aggvar protein plot - PSMs with very different locations
@@ -120,14 +114,8 @@ pRolocVis(hyperLOPIT2015, fcol = "protein.complexes")
 ## DEMO:
 ## ------------------------------------------------------------------
 
-hl <- combineFeatures(hyperLOPIT2015ms3r1psm,
-                      groupBy = fData(hyperLOPIT2015ms3r1psm)$Sequence,
-                      fun = median)
 pRolocVis(hl, app = "aggregate", fcol = "markers",
           groupBy = "Protein.Group.Accessions")
-
-
-
 
 
 ## ==================================================================
@@ -145,10 +133,6 @@ pRolocVis(hl, app = "aggregate", fcol = "markers",
 myThreshold <- pRolocVis(hyperLOPIT2015, app = "classify",
                                          fcol = "svm.classification",
                                          scol = "svm.score")
-
-
-
-
 
 
 ## ==================================================================
@@ -172,7 +156,6 @@ myThreshold <- pRolocVis(hyperLOPIT2015, app = "classify",
 ##           - RHS: LPS induced response
 
 
-
 ## DEMO:  CDC42. In active state binds to a variety of effector proteins
 ##              to regulate cellular responses at the plasma membrane (PM)
 ## ------------------------------------------------------------------
@@ -181,21 +164,5 @@ myThreshold <- pRolocVis(hyperLOPIT2015, app = "classify",
 ##      moves to the plasma membrane --->   Unknown to PM
 ## 3.   Make columns of table more informative, remove redundant ones,
 ##      add SVM prediction ones so you can see what's changes
-
-
-
-
-## DEMO:  RABs. Another GTPase regulates membrane trafficking
-##              to regulate cellular responses at the plasma membrane (PM)
-## ------------------------------------------------------------------
-
-##       Rab GTPases regulate many steps of membrane trafficking, including
-##       vesicle formation and movement. These processes make up the route through which
-##       cell surface proteins are trafficked from the GA to the PM
-## ------------------------------------------------------------------
-## 1.   Search for the RAB32 --->           GA to ER      (see SVM loc in table)
-##      Then search for RAB12 --->          PM to GA
-##      Then search for RAB6B --->          GA to PM
-## (make sure columns of table display SVM location)
 
 pRolocVis(xx, app = "compare", remap = FALSE)
